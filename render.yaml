@@ -1,0 +1,11 @@
+services:
+  - name: melodify
+    type: web
+    env: java
+    region: oregon
+    buildCommand: ./mvnw package -DskipTests
+    startCommand: java -jar target/melodify-0.0.1-SNAPSHOT.jar
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
